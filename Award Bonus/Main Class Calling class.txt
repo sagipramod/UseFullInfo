@@ -1,0 +1,10 @@
+if (isEligibleForPromotion)
+                {
+                    //Sprint 7 - 1 to 1 Bonus
+                    int ProductId = GetProductIdByCardType(storedValueCard.CardType, "Suncor");
+
+                    //Award Bonus
+                    LoyaltyAction.LoyaltyAction loyaltyAction = new LoyaltyAction.LinkSuncorCard(loyaltyCardNumber, ProductId, storedValueCard.ValueCardNumber, null, storedValueCard.CardType);
+                    AwardBonus awardBonus = new AwardBonus(loyaltyAction);
+                    bool response = awardBonus.Run();
+                }
